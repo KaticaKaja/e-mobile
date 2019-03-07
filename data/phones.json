@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "name": "Huawei P Smart",
+        "price": {
+            "sale" : true,
+            "new" : 235,
+            "old" : 400
+        },
+        "img": "images/pSmart.jpg",
+        
+            "disp": 6.21,
+            "ROM": 64,
+            "RAM": 3,
+            "selfie": 8,
+            "cameraR": 13,
+            "cpu": "Octa-core (4x2.36 GHz Cortex-A53 & 4x1.7 GHz Cortex-A53)",
+        
+        "stars": 3.5
+    },
+    {
+        "id": 2,
+        "name": "Huawei Mate 20 X",
+        "price": {
+            "sale" : true,
+            "new" : 924,
+            "old" : 999
+        },
+        "img": "images/mate20.jpg",
+        
+            "disp": 7.2,
+            "ROM": 128,
+            "RAM": 4,
+            "selfie": 40,
+            "cameraR": 24,
+            "cpu": "Octa-core (2x2.6 GHz Cortex-A76 & 2x1.92 GHz Cortex-A76 & 4x1.8 GHz Cortex-A55)",
+        
+        "stars": 5.0
+    },
+    {
+        "id": 3,
+        "name": "Samsung Galaxy A6",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 252
+        },
+        "img": "images/samsungA6.jpg",
+        
+            "disp": 5.6,
+            "ROM": 32,
+            "RAM": 4,
+            "selfie": 16,
+            "cameraR": 16,
+            "cpu": "Octa-core 1.6 GHz Cortex-A53",
+        
+        "stars": 4.0
+    },
+    {
+        "id": 4,
+        "name": "Apple iPhone 8 (Red)",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 610
+        },
+        "img": "images/iphone8.jpg",
+        
+            "disp": 4.7,
+            "ROM": 64,
+            "RAM": 2,
+            "selfie": 7,
+            "cameraR": 12,
+            "cpu": "Hexa-core (2x Monsoon + 4x Mistral)",
+      
+        "stars": 4.5
+    }
+]

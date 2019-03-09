@@ -2,6 +2,7 @@ window.onload = function(){
     
     ajaxAllPhones();
     ajaxRAMROM();
+    ajaxPosts();
     
 // SHOW ALL PHONES
 function ajaxAllPhones(){
@@ -22,19 +23,19 @@ function ajaxAllPhones(){
 function renderPhones(data){
     let html = "";
     data.forEach(phone => {
-    html += `<div class="col-lg-4 col-md-6 text-center overflow-hidden mt-2">
+    html += `<div class="col-lg-4 col-md-6 overflow-hidden mb-5">
                 <img class="w-100" src="${phone.img}" alt="${phone.name}"/>`;
             if(phone.price.sale){
                 html+=`
                 <div class="d-flex justify-content-around mt-3"><p>SALE : ${phone.price.new}$ </p><del>${phone.price.old}$</del></div>
-                <p><span class="ribbon">SALE</span>`;
+                <span class="ribbon">SALE</span>`;
                 
             }
             else{
                 html+=`<div class="d-flex justify-content-center mt-3"><p>PRICE : ${phone.price.old}$ </p></div>`;
             }
             html+=`<div class="d-flex justify-content-between mt-3"><button type="button" class="btn btn-success">Buy now</button>
-            <button type="button" data-phone="${phone.id}" class="btn btn-outline-primary config">Configuration</button></div></div>`; 
+            <button type="button" data-phone="${phone.id}" class="btn btn-primary config">Configuration</button></div></div>`; 
     });
     document.querySelector("#products").innerHTML = html;
     document.querySelectorAll(".config").forEach(button=>{
@@ -65,7 +66,7 @@ function renderPhone(phone){
                 <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-microchip configItem"></span><span class="w-75 text-right">${phone.cpu}</span></li>
             </ul>
             <div class="d-flex justify-content-around mt-5">
-            <button type="button" class="btn btn-lg w-50 btn-outline-primary" id="back">Go back</button>
+            <button type="button" class="btn btn-lg w-50 btn-primary" id="back">Go back</button>
             <button type="button" class="btn btn-lg w-50 btn-success">Buy now</button>
             </div></div>
         </div>
@@ -119,17 +120,20 @@ function ajaxRAMROM(){
 function renderRAMROM(data){
     let html = "";
     data.forEach(category => {
-        if(category.name=="ram" && category.id=="ram1"){
-            html+=`<h4>RAM memory</h4>`;
+        if(category.id=="ram1"){
+            html+=`<div class="text-lg-left text-md-center"><h4>RAM memory</h4>`;
         }
-        else if(category.name=="storage" && category.id=="storage1"){
-            html+=`<h4>Storage</h4>`
+        else if(category.id=="storage1"){
+            html+=`<div class="text-lg-left text-md-center mt-lg-2"><h4>ROM memory</h4>`
         }
         html += `
-        <div class="custom-control custom-checkbox border-top-primary pt-2">
+        <div class="custom-control custom-checkbox border-top-primary my-3">
             <input type="checkbox" class="custom-control-input" name="${category.name}" value="${category.value}" id="${category.id}">
             <label class="custom-control-label" for="${category.id}">${category.labelContent}</label>
         </div>`;
+        if(category.id=="ram3" || category.id=="storage4"){
+            html+=`</div>`;
+        }
     });
     document.querySelector("#categories").innerHTML = html;
 
@@ -213,6 +217,7 @@ function filterRAMROM(){
 
 
 document.getElementById("search").addEventListener("keyup",searchPhones);
+
 function searchPhones() {
     const userInput = this.value;
     document.querySelectorAll("input[type='checkbox']").forEach(check=>{
@@ -234,6 +239,76 @@ function searchPhones() {
         console.error(err);
       }
     });
+  }
+
+  function ajaxPosts(){
+    $.ajax({
+        url: 'data/blogPosts.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function (posts) {
+            renderPosts(posts);
+            
+        },
+        error: function(err) {
+        console.error(err);
+        }
+    });
+  }
+  
+  function renderPosts(posts){
+    var months = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"];
+    var postDate = "";
+    
+    let html = "";
+    posts.forEach(post=>{
+        postDate=`${months[post.date.monthP-1]} ${post.date.dayP} ${post.date.yearP}`;
+        html+=`
+        <div class="col-lg-4 col-md-6 mb-5">
+            <div class="card">
+                <img class="card-img-top" src="${post.img.src}" alt="${post.img.src}">
+                <div class="card-body">
+                    <h5 class="card-title">${post.title}</h5>
+                    <p class="card-text">${post.content}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">${postDate}</small>
+                </div>
+            </div>
+        </div>
+        `;
+    })
+    document.getElementById("blogPosts").innerHTML = html;
+    document.getElementById("dateSort").addEventListener("change",(e)=>{
+        filterPosts(e);
+    });
+    
+  }
+
+  function filterPosts(e){
+    $.ajax({
+        url: 'data/blogPosts.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function (posts) {
+            posts.forEach(post=>{
+                post.postDate = new Date(`${post.date.monthP}-${post.date.dayP}-${post.date.yearP}`);
+            });
+                if(e.target.value == 1){
+                    posts.sort((a,b)=>b.postDate-a.postDate);
+                }
+                else if(e.target.value == 2){
+                    posts.sort((a,b)=>a.postDate-b.postDate);
+                }
+             
+            renderPosts(posts);
+            
+        },
+        error: function(err) {
+        console.error(err);
+        }
+    });
+    
   }
 //NAVBAR BACKGROUND SCROLL CHANGE
 var iScrollPos = 0;
@@ -275,4 +350,6 @@ var iScrollPos = 0;
             e.target.style.opacity = opacity;
         }
     }
+
+
 }

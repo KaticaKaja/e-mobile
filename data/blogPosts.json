@@ -1,0 +1,80 @@
+[
+    {
+        "img" : {
+            "src" : "assets/images/samsungA8Post.jpg",
+            "alt" : "Samsung A8+ news"
+        },
+        "title" : "Samsung Galaxy A8+ (2018) gets Android Pie update",
+        "content" : "The Samsung Galaxy A8+ (2018) that was launched back in December 2017 with Android Nougat is getting the Android Pie update with February 2019 Android security patch. The update is currently only available in Russia and there's no word on when it will be rolled out in other markets",
+        "date" : {
+            "dayP": 9,
+            "monthP": 2,
+            "yearP": 2019
+        }
+    },
+    {
+        "img" : {
+            "src" : "assets/images/huaweiPost.png",
+            "alt" : "Huawei P30 news"
+        },
+        "title" : "Huawei continues its P30 teaser campaign with some impressive zoom photos",
+        "content" : "Huawei's upcoming P30 and P30 Pro flagships have been leaking left and right over the past few months. So much so, in fact, that the Pro variant can even be spotted in at least two sets of hands-on photos, with the latter one actually coming from a media outlet, complete with impressions.",
+        "date" : {
+            "dayP": 7,
+            "monthP": 3,
+            "yearP": 2019
+        }
+    },
+    {
+        "img" : {
+            "src" : "assets/images/samsungS10Post.jpg",
+            "alt" : "Samsung S10 update"
+        },
+        "title" : "Samsung Galaxy S10 pre-orders break record in US",
+        "content" : "The Samsung Galaxy S10 is doing very well in sales and the phone just launched on Friday. Following today’s earlier news about the Galaxy S10 breaking the UK’s Samsung pre-order record, the US is also seeing record pre-orders for the Samsung flagship",
+        "date" : {
+            "dayP": 27,
+            "monthP": 1,
+            "yearP": 2019
+        }
+    },
+    {
+        "img" : {
+            "src" : "assets/images/sonyPost.jpg",
+            "alt" : "Sony Xperia 10 review"
+        },
+        "title" : "Sony Xperia 10 and Xperia 10 Plus in for review",
+        "content" : "Sony introduced the Xperia 10 and Xperia 10 Plus at MWC 2019. The new midrangers are descendants of the Xperia XA series and are commemorating ten years since the whole Xperia smartphone lineup was started. The two phones are now in our hands, and we've already started putting them through all our extensive tests",
+        "date" : {
+            "dayP": 25,
+            "monthP": 2,
+            "yearP": 2019
+        }
+    },
+    {
+        "img" : {
+            "src" : "assets/images/iphoneSEPost.jpg",
+            "alt" : "iphone SE on market"
+        },
+        "title" : "iPhone SE on clearance at Apple’s website starting at $249 in the US",
+        "content" : "On Apple’s website, the certified refurbished iPhone SE is currently on sale as Apple clears its stock. Some of the models come with a free SIM card, which some carriers charge for if you don’t already have one. Otherwise, they are all SIM unlocked. The 32GB iPhone SE is going for $249 while a 128GB version sells for $299.",
+        "date" : {
+            "dayP": 15,
+            "monthP": 1,
+            "yearP": 2019
+        }
+    },
+    {
+        "img" : {
+            "src" : "assets/images/motorolaPost.jpg",
+            "alt" : "Motorola Razr features"
+        },
+        "title" : "Motorola Razr foldable smartphone's features revealed",
+        "content" : "Motorola's plans to resurrect the Razr brand by giving it a more 2019 vibe - a flexible display. Essentially, it's going to be a flip phone with a high-tech twist. We've seen some schematics of what it might look like and now we have more details about the software features. Only a couple of apps will be allowed to access the second display like Moto Display, Moto Actions and Moto Camera.",
+        "date" : {
+            "dayP": 14,
+            "monthP": 1,
+            "yearP": 2019
+        }
+    }
+]

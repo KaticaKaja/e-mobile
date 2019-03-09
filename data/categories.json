@@ -1,0 +1,44 @@
+[
+    {
+        "name" : "ram",
+        "value" : 2,
+        "labelContent" : "2 Gb",
+        "id": "ram1"
+    },
+    {
+        "name" : "ram",
+        "value" : 3,
+        "labelContent" : "3 Gb",
+        "id": "ram2"
+    },
+    {
+        "name" : "ram",
+        "value" : 4,
+        "labelContent" : "4 Gb",
+        "id": "ram3"
+    },
+    {
+        "name" : "storage",
+        "value" : 8,
+        "labelContent" : "8 Gb",
+        "id": "storage1"
+    },
+    {
+        "name" : "storage",
+        "value" : 16,
+        "labelContent" : "16 Gb",
+        "id": "storage2"
+    },
+    {
+        "name" : "storage",
+        "value" : 32,
+        "labelContent" : "32 Gb",
+        "id": "storage3"
+    },
+    {
+        "name" : "storage",
+        "value" : 64,
+        "labelContent" : "64 Gb",
+        "id": "storage4"
+    }
+]

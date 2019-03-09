@@ -7,12 +7,15 @@
 html{
     scroll-behavior: smooth;
 }
+a{
+    text-decoration: none;
+}
 a:hover{
     text-decoration: none;
 }
 #landingImg{
     height: 100vh;
-    background-image: url("../../images/bgImg.jpg");
+    background-image: url("../images/bgImg.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -33,16 +36,20 @@ a:hover{
     border-top-color:  #669A30;
 }
 #menuButton{
-    color: blue;
+    color: #00659D;
     font-size: 30px;
     font-weight: normal;
 }
-/* #product{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-} */
+
+#btnSearch{
+    position: absolute;
+    top:1px;
+    right:0;
+    padding: 9px;
+    color: #669A30;
+    border: 1px solid #669A30;
+    border-radius: 4px;
+}
 
 .ribbon{
     width: 150px;
@@ -61,4 +68,40 @@ a:hover{
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
+}
+#align{
+    position: relative;
+    left:0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.configItem{
+    
+    font-size: 30px;
+    color: #00659D;
+}
+
+.color{
+    color: #669A30;
+}
+
+:root {
+    /* Set fade in duration */
+    --fade-time: 0.5s;
+  }
+
+.imgs img {
+  cursor: pointer;
+}
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--fade-time) ease-in 1 forwards;
 }

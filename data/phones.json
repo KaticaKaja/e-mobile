@@ -7,10 +7,14 @@
             "new" : 235,
             "old" : 400
         },
-        "img": "images/pSmart.jpg",
-        
+        "img": "assets/images/pSmart.jpg",
+        "imgs":[
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg"
+        ],
             "disp": 6.21,
-            "ROM": 64,
+            "ROM": 32,
             "RAM": 3,
             "selfie": 8,
             "cameraR": 13,
@@ -26,10 +30,14 @@
             "new" : 924,
             "old" : 999
         },
-        "img": "images/mate20.jpg",
-        
+        "img": "assets/images/mate20.jpg",
+        "imgs":[
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg"
+        ],
             "disp": 7.2,
-            "ROM": 128,
+            "ROM": 64,
             "RAM": 4,
             "selfie": 40,
             "cameraR": 24,
@@ -45,8 +53,12 @@
             "new" : 0,
             "old" : 252
         },
-        "img": "images/samsungA6.jpg",
-        
+        "img": "assets/images/samsungA6.jpg",
+        "imgs":[
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg"
+        ],
             "disp": 5.6,
             "ROM": 32,
             "RAM": 4,
@@ -64,8 +76,12 @@
             "new" : 0,
             "old" : 610
         },
-        "img": "images/iphone8.jpg",
-        
+        "img": "assets/images/iphone8.jpg",
+        "imgs":[
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg",
+            "assets/images/samsungA6.jpg"
+        ],
             "disp": 4.7,
             "ROM": 64,
             "RAM": 2,

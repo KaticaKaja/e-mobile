@@ -27,12 +27,12 @@ function renderPhones(data){
                 <img class="w-100" src="${phone.img}" alt="${phone.name}"/>`;
             if(phone.price.sale){
                 html+=`
-                <div class="d-flex justify-content-around mt-3"><p>SALE : ${phone.price.new}$ </p><del>${phone.price.old}$</del></div>
+                <div class="d-flex justify-content-around mt-3 price"><p>${phone.price.new}$ </p><del>${phone.price.old}$</del></div>
                 <span class="ribbon">SALE</span>`;
                 
             }
             else{
-                html+=`<div class="d-flex justify-content-center mt-3"><p>PRICE : ${phone.price.old}$ </p></div>`;
+                html+=`<div class="d-flex justify-content-center mt-3 price"><p>${phone.price.old}$ </p></div>`;
             }
             html+=`<div class="d-flex justify-content-between mt-3"><button type="button" class="btn btn-success">Buy now</button>
             <button type="button" data-phone="${phone.id}" class="btn btn-primary config">Configuration</button></div></div>`; 
@@ -43,11 +43,12 @@ function renderPhones(data){
     });
     
 }
+// RENDER ONE PHONE
 function renderPhone(phone){
 
     let html = "";
     html+=`
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5 mb-5 fade-in">
         <div class="col-md-6">
             <div class="main-img w-100 d-flex justify-content-center"><img id="current" src="${phone.img}" alt="${phone.name}"/></div>
             <div class="row imgs mt-3">`
@@ -82,8 +83,34 @@ function renderPhone(phone){
     });
     
 }
+// RENDER CHECKBOXES
+function renderRAMROM(data){
+    let html = "";
+    data.forEach(category => {
+        if(category.id=="ram1"){
+            html+=`<div class="text-lg-left text-md-center"><h4>RAM memory</h4>`;
+        }
+        else if(category.id=="storage1"){
+            html+=`<div class="text-lg-left text-md-center mt-lg-2"><h4>ROM memory</h4>`
+        }
+        html += `
+        <div class="custom-control custom-checkbox border-top-primary my-3">
+            <input type="checkbox" class="custom-control-input" name="${category.name}" value="${category.value}" id="${category.id}">
+            <label class="custom-control-label" for="${category.id}">${category.labelContent}</label>
+        </div>`;
+        if(category.id=="ram3" || category.id=="storage4"){
+            html+=`</div>`;
+        }
+    });
+    document.querySelector("#categories").innerHTML = html;
 
-
+    document.querySelectorAll("input[type='checkbox']").forEach(box => {
+        box.addEventListener("change",()=>{
+            filterRAMROM();
+        });
+    });
+}
+// SHOW - AJAX
 function ajaxPhone(){
     const buttonId = this.dataset.phone;
     $.ajax({
@@ -117,34 +144,8 @@ function ajaxRAMROM(){
         
     });
 }
-function renderRAMROM(data){
-    let html = "";
-    data.forEach(category => {
-        if(category.id=="ram1"){
-            html+=`<div class="text-lg-left text-md-center"><h4>RAM memory</h4>`;
-        }
-        else if(category.id=="storage1"){
-            html+=`<div class="text-lg-left text-md-center mt-lg-2"><h4>ROM memory</h4>`
-        }
-        html += `
-        <div class="custom-control custom-checkbox border-top-primary my-3">
-            <input type="checkbox" class="custom-control-input" name="${category.name}" value="${category.value}" id="${category.id}">
-            <label class="custom-control-label" for="${category.id}">${category.labelContent}</label>
-        </div>`;
-        if(category.id=="ram3" || category.id=="storage4"){
-            html+=`</div>`;
-        }
-    });
-    document.querySelector("#categories").innerHTML = html;
 
-    document.querySelectorAll("input[type='checkbox']").forEach(box => {
-        box.addEventListener("change",()=>{
-            filterRAMROM();
-        });
-    });
-}
-
-
+//FUNCTIONALITY OF CHECKBOXES AND SEARCH
 
 function filterRAMROM(){
     document.getElementById("search").value="";
@@ -214,7 +215,6 @@ function filterRAMROM(){
     
 }
 
-
 document.getElementById("search").addEventListener("keyup",searchPhones);
 
 function searchPhones() {
@@ -253,34 +253,28 @@ var iScrollPos = 0;
             $("#menu").css("background-color","transparent");
         }
     })
-    function gallery(){
-        const current = document.querySelector('#current');
-        const imgs = document.querySelector('.imgs');
-        const img = document.querySelectorAll('.imgs img');
-        const opacity = 0.6;
+// GALLERY - ONE PHONE
+function gallery(){
+    const current = document.querySelector('#current');
+    const imgs = document.querySelector('.imgs');
+    const img = document.querySelectorAll('.imgs img');
+    const opacity = 0.6;
 
-        // Set first img opacity
-        img[0].style.opacity = opacity;
 
-        imgs.addEventListener('click', imgClick);
+    img[0].style.opacity = opacity;
 
-        function imgClick(e) {
-            // Reset the opacity
-            img.forEach(img => (img.style.opacity = 1));
+    imgs.addEventListener('click', imgClick);
 
-            // Change current image to src of clicked image
-            current.src = e.target.src;
-            
-            // Add fade in class
-            current.classList.add('fade-in');
+    function imgClick(e) {
+        
+        img.forEach(img => (img.style.opacity = 1));
 
-            // Remove fade-in class after .5 seconds
-            setTimeout(() => current.classList.remove('fade-in'), 500);
-
-            // Change the opacity to opacity var
-            e.target.style.opacity = opacity;
-        }
+        current.src = e.target.src;
+        current.classList.add('fade-in');
+        setTimeout(() => current.classList.remove('fade-in'), 500);
+        e.target.style.opacity = opacity;
     }
+}
 
 
 }

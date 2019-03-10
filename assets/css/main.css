@@ -91,6 +91,9 @@ a:hover{
 .color{
     color: #669A30;
 }
+.color2{
+    color: #00659D;
+}
 
 :root {
     /* Set fade in duration */
@@ -125,4 +128,10 @@ a:hover{
 
 .news{
     margin-top:10rem;
+}
+.bgcolor{
+    background-color: #000;
+}
+.price{
+    font-size: 20px;
 }

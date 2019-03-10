@@ -8,23 +8,22 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse bg-inverse fixed-top p-0" id="menu">
-        
+    <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse bg-inverse fixed-top p-0 menuPosts" id="menu">
         <div class="container">
             <a href="#"><img src="assets/images/logo2.png" alt="logo" class="navbar-brand" id="logo"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="menuButton" class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto text-center" id="nav">
-                    <li class="nav-item active">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blogposts.html">News</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -34,39 +33,24 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid d-flex flex-column justify-content-end" id="landingImg">
-        <div id="arrow" class="d-flex align-items-center flex-column mb-5"><span class="arrowText">Shop</span><a href="#content" class="arrow-down"></a></div>
-    </div>
-    <div class="container" id="content">
-        <div id="singlePhone" class="d-none"></div>
-        <div id="allPhones" class="d-block">
-            <h1 class="m-5 text-center"><span class="myBorder px-5 pb-2">Checkout our <span class="color"> phones</span></span></h1>
-            <div class="row">
-                <div class="col-lg-3 mb-3">
-                    <form>
-                        <div id="align" class="mb-3">
-                            <input class="form-control" type="text" placeholder="Search" id="search">
-                            <i class="fas fa-search" id="btnSearch"></i>
-                        </div>
-                        <div class="d-md-flex flex-lg-column flex-xs-column justify-content-md-around" id="categories">
-                            <!-- <div >
-                                
-                            </div>   -->
-                        </div>
-                    </form>
-                    
-                </div>
-                <div class="col-lg-9">
-                    <div class="row" id="products"></div>
-                </div>
+    <div class="container news">
+        <div class="row mt-5 mb-5">
+            <div class="mb-5 col-lg-6 col-md-12">
+                <select class="custom-select" id="dateSort">
+                    <option value="0">Order by date...</option>
+                    <option value="1">Latest posts</option>
+                    <option value="2">Oldest posts</option>
+                </select>
+            </div>
+            <div class="row mx-0" id="blogPosts">
+            
             </div>
         </div>
-        
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/posts.js"></script>
+    <script src="assets/js/posts.js"></script>
 </body>
 </html>

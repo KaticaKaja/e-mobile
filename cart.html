@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse bg-inverse fixed-top p-0" id="menu">
-        
+    <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse bg-inverse fixed-top p-0 menuPosts" id="menu">
         <div class="container">
             <a href="#"><img src="assets/images/logo2.png" alt="logo" class="navbar-brand" id="logo"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,33 +25,43 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid d-flex flex-column justify-content-end" id="landingImg">
-        <div id="arrow" class="d-flex align-items-center flex-column mb-5"><span class="arrowText">Shop</span><a href="#content" class="arrow-down"></a></div>
-    </div>
-    <div class="container" id="content">
-        <div id="singlePhone" class="d-none"></div>
-        <div id="allPhones" class="d-block fade-in">
-            <h1 class="m-5 text-center"><span class="myBorder pb-2">Checkout our <span class="color"> phones</span></span></h1>
-            <div class="row">
-                <div class="col-lg-3 mb-3">
-                    <form>
-                        <div id="align" class="mb-3">
-                            <input class="form-control" type="text" placeholder="Search" id="search">
-                            <i class="fas fa-search" id="btnSearch"></i>
-                        </div>
-                        <div class="d-md-flex flex-lg-column flex-xs-column justify-content-md-around" id="categories">
-                           
-                        </div>
-                    </form>
-                    
-                </div>
-                <div class="col-lg-9">
-                    <div class="row" id="products"></div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="container">
+            <table class="table cart">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1<!--Number of product--></th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
-        
     </div>
+
+
     <footer class="w-100 bgcolor py-2 text-white position-relative">
         <div class="container"> <!--ODRADI DINAMICKI NA KRAJU-->
             <div class="configItem d-flex justify-content-end">
@@ -65,11 +74,10 @@
         </div>
         <div class="text-center"><p>Copyright &copy; <span class="color">E</span>-<span class="color2">mobile</span> 2019</p></div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="assets/js/nav.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
 </body>
 </html>

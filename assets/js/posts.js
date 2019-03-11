@@ -52,11 +52,13 @@ function ajaxPosts(){
         method: 'GET',
         dataType: 'json',
         success: function (posts) {
+          
             posts.forEach(post=>{
                 post.postDate = new Date(`${post.date.monthP}-${post.date.dayP}-${post.date.yearP}`);
             });
                 if(e.target.value == 1){
                     posts.sort((a,b)=>b.postDate-a.postDate);
+                    //posts = posts.slice(0,3);
                 }
                 else if(e.target.value == 2){
                     posts.sort((a,b)=>a.postDate-b.postDate);

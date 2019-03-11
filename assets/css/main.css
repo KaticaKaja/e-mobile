@@ -120,12 +120,6 @@ a:hover{
 .btn-success{
     background-color: #669A30;
 }
-/* .myBorder{
-    border-bottom: 2px solid #00659D;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-} */
-
 .news{
     margin-top:10rem;
 }
@@ -134,4 +128,7 @@ a:hover{
 }
 .price{
     font-size: 20px;
+}
+.cart{
+    margin-top: 10rem;
 }

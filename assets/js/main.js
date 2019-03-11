@@ -34,8 +34,8 @@ function renderPhones(data){
             else{
                 html+=`<div class="d-flex justify-content-center mt-3 price"><p>${phone.price.old}$ </p></div>`;
             }
-            html+=`<div class="d-flex justify-content-between mt-3"><button type="button" class="btn btn-success">Buy now</button>
-            <button type="button" data-phone="${phone.id}" class="btn btn-primary config">Configuration</button></div></div>`; 
+            html+=`<div class="d-flex justify-content-center mt-3">
+            <button type="button" data-phone="${phone.id}" class="btn btn-primary config">View configuration</button></div></div>`; 
     });
     document.querySelector("#products").innerHTML = html;
     document.querySelectorAll(".config").forEach(button=>{
@@ -43,6 +43,7 @@ function renderPhones(data){
     });
     
 }
+//<button type="button" class="btn btn-success">Buy now</button>
 // RENDER ONE PHONE
 function renderPhone(phone){
 
@@ -68,7 +69,7 @@ function renderPhone(phone){
             </ul>
             <div class="d-flex justify-content-around mt-5">
             <button type="button" class="btn btn-lg w-50 btn-primary" id="back">Go back</button>
-            <button type="button" class="btn btn-lg w-50 btn-success">Buy now</button>
+            <button type="button" class="btn btn-lg w-50 btn-success" id="buy">Buy now</button>
             </div></div>
         </div>
     </div>`;
@@ -80,6 +81,10 @@ function renderPhone(phone){
     document.getElementById("back").addEventListener("click",function(){
         $("#allPhones").toggleClass("d-block").toggleClass("d-none");
         $("#singlePhone").toggleClass("d-block").toggleClass("d-none");
+    });
+
+    document.getElementById("buy").addEventListener("click",function(){
+        sendInCart(phone);
     });
     
 }
@@ -200,12 +205,16 @@ function filterRAMROM(){
               });
         
             let checkedBoxes = ramsFiltered.filter(ramFiltered => ramFiltered.checked)
+            
             if (checkedBoxes.length) {
                 renderPhones(parsedData);
                 
             }
             else{
                 renderPhones(data);
+            }
+            if(!parsedData.length && checkedBoxes.length > 0){
+                noProducts();
             }
         },
         error: function(status, error){
@@ -214,7 +223,10 @@ function filterRAMROM(){
     });
     
 }
-
+function noProducts(){
+    let html = `<div class="my-auto mx-auto"><h3 class='color2'>No products.</h3></div>`;
+    document.getElementById("products").innerHTML = html;
+}
 document.getElementById("search").addEventListener("keyup",searchPhones);
 
 function searchPhones() {
@@ -240,7 +252,12 @@ function searchPhones() {
     });
   }
 
+function sendInCart(phone){
+    
+    const inCart = JSON.stringify(phone);
+    localStorage.setItem(phone.id,inCart);
 
+}
 //NAVBAR BACKGROUND SCROLL CHANGE
 var iScrollPos = 0;
 

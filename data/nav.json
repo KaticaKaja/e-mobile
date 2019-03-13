@@ -16,6 +16,6 @@
     {
        
         "href" : "cart.html",
-        "content" : "<span class='fas fa-shopping-cart'></span>"
+        "content" : "<span class='fas fa-shopping-cart position-relative'><span class='text-white position-absolute num'></span></span>"
     }
 ]

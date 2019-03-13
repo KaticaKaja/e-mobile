@@ -2,8 +2,11 @@ window.onload = function(){
     
     ajaxAllPhones();
     ajaxRAMROM();
+    onScrollChangeBgColor();
+    document.getElementById("search").addEventListener("keyup",searchPhones);
 
-    
+
+}
 // SHOW ALL PHONES
 function ajaxAllPhones(){
     $.ajax({
@@ -43,7 +46,7 @@ function renderPhones(data){
     });
     
 }
-//<button type="button" class="btn btn-success">Buy now</button>
+
 // RENDER ONE PHONE
 function renderPhone(phone){
 
@@ -75,6 +78,7 @@ function renderPhone(phone){
     </div>`;
     
     document.getElementById("singlePhone").innerHTML = html;
+    addNumByCart();
     $("#allPhones").toggleClass("d-none").toggleClass("d-block");
     $("#singlePhone").toggleClass("d-block").toggleClass("d-none");
     gallery();
@@ -82,12 +86,14 @@ function renderPhone(phone){
         $("#allPhones").toggleClass("d-block").toggleClass("d-none");
         $("#singlePhone").toggleClass("d-block").toggleClass("d-none");
     });
-
     document.getElementById("buy").addEventListener("click",function(){
+
         sendInCart(phone);
+        addNumByCart();
     });
     
 }
+
 // RENDER CHECKBOXES
 function renderRAMROM(data){
     let html = "";
@@ -156,20 +162,20 @@ function filterRAMROM(){
     document.getElementById("search").value="";
     const ramCheckboxes = document.querySelectorAll("input[name='ram']");
     const storageCheckboxes = document.querySelectorAll("input[name='storage']");
-    let ramsFiltered = [];
+    let boxes = [];
     ramCheckboxes.forEach(box=>{
-        ramsFiltered.push({
+        boxes.push({
             ramValue: box.value,
             checked: box.checked,
             name : box.name
-        })
+        });
     });
     storageCheckboxes.forEach(box=>{
-        ramsFiltered.push({
+        boxes.push({
             storageValue: box.value,
             checked: box.checked,
             name : box.name
-        })
+        });
     })
 
     $.ajax({
@@ -179,15 +185,42 @@ function filterRAMROM(){
         success: function(data){
             let parsedData = [];
             let res = [];
-            ramsFiltered.forEach(ramFiltered => {
-                if(ramFiltered.checked) {
-                  data.filter(phone => {
-                        if((phone.RAM == ramFiltered.ramValue) || (phone.ROM ==ramFiltered.storageValue)){
+            let boxesChecked = [];
+            boxes.forEach(box => {
+                if(box.checked) {
+                    boxesChecked.push(box);
+                  data.forEach(phone => {
+                        if((phone.RAM == box.ramValue) || (phone.ROM ==box.storageValue)){
                             res.push(phone);
                         }
                     });
                 }
             });
+            let ram = [];
+            let rom = [];
+            let res2 = [];
+            boxesChecked.forEach(box=>{
+                if(box.name == 'ram'){
+                    ram.push(box);
+                }
+                else if(box.name == 'storage'){
+                    rom.push(box);
+                }
+            });
+            if(ram.length && rom.length){
+                res = [];
+                ram.forEach(ra=>{
+                    rom.forEach(ro=>{
+                        data.forEach(phone=>{
+                            if(ra.ramValue==phone.RAM && ro.storageValue==phone.ROM){
+                                res2.push(phone);
+                            }
+                        });
+                    
+                    });
+                });
+            }
+            // prevent same phone from showing more than once
             let count = 0;
             let found = false;
             res.forEach(phone => {
@@ -195,7 +228,7 @@ function filterRAMROM(){
                     if(phone.id==unique.id){
                         found = true;
                     }
-                })
+                });
                 count++;
                 if(count==1 && found ==false){
                     parsedData.push(phone);
@@ -203,17 +236,23 @@ function filterRAMROM(){
                 count = 0;
                 found = false;
               });
-        
-            let checkedBoxes = ramsFiltered.filter(ramFiltered => ramFiltered.checked)
             
-            if (checkedBoxes.length) {
+            
+            if(res2.length){
+                parsedData = [];
+                res2.forEach(el=>{
+                    parsedData.push(el);
+                });
+            }
+            
+            if (boxesChecked.length) {
                 renderPhones(parsedData);
                 
             }
             else{
                 renderPhones(data);
             }
-            if(!parsedData.length && checkedBoxes.length > 0){
+            if(parsedData.length==0 && boxesChecked.length > 0){
                 noProducts();
             }
         },
@@ -223,11 +262,12 @@ function filterRAMROM(){
     });
     
 }
+
 function noProducts(){
     let html = `<div class="my-auto mx-auto"><h3 class='color2'>No products.</h3></div>`;
     document.getElementById("products").innerHTML = html;
 }
-document.getElementById("search").addEventListener("keyup",searchPhones);
+
 
 function searchPhones() {
     const userInput = this.value;
@@ -258,7 +298,20 @@ function sendInCart(phone){
     localStorage.setItem(phone.id,inCart);
 
 }
+
+function addNumByCart(){
+    let num = 0;
+    if(localStorage.length){
+        num = localStorage.length;
+    }
+
+    document.querySelectorAll(".num").forEach(item=>{
+        item.innerHTML = num;
+    });
+}
+
 //NAVBAR BACKGROUND SCROLL CHANGE
+function onScrollChangeBgColor(){
 var iScrollPos = 0;
 
     $(window).scroll(function(){
@@ -269,7 +322,8 @@ var iScrollPos = 0;
         else{
             $("#menu").css("background-color","transparent");
         }
-    })
+    });
+}
 // GALLERY - ONE PHONE
 function gallery(){
     const current = document.querySelector('#current');
@@ -293,5 +347,3 @@ function gallery(){
     }
 }
 
-
-}

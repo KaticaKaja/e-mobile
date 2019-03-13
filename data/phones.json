@@ -18,9 +18,7 @@
             "RAM": 3,
             "selfie": 8,
             "cameraR": 13,
-            "cpu": "Octa-core (4x2.36 GHz Cortex-A53 & 4x1.7 GHz Cortex-A53)",
-        
-        "stars": 3.5
+            "cpu": "Octa-core (4x2.36 GHz Cortex-A53 & 4x1.7 GHz Cortex-A53)"
     },
     {
         "id": 2,
@@ -41,9 +39,7 @@
             "RAM": 4,
             "selfie": 40,
             "cameraR": 24,
-            "cpu": "Octa-core (2x2.6 GHz Cortex-A76 & 2x1.92 GHz Cortex-A76 & 4x1.8 GHz Cortex-A55)",
-        
-        "stars": 5.0
+            "cpu": "Octa-core (2x2.6 GHz Cortex-A76 & 2x1.92 GHz Cortex-A76 & 4x1.8 GHz Cortex-A55)"
     },
     {
         "id": 3,
@@ -64,9 +60,7 @@
             "RAM": 4,
             "selfie": 16,
             "cameraR": 16,
-            "cpu": "Octa-core 1.6 GHz Cortex-A53",
-        
-        "stars": 4.0
+            "cpu": "Octa-core 1.6 GHz Cortex-A53"
     },
     {
         "id": 4,
@@ -87,8 +81,6 @@
             "RAM": 2,
             "selfie": 7,
             "cameraR": 12,
-            "cpu": "Hexa-core (2x Monsoon + 4x Mistral)",
-      
-        "stars": 4.5
+            "cpu": "Hexa-core (2x Monsoon + 4x Mistral)"
     }
 ]

@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 :focus{
     outline: none!important;
 }
@@ -131,4 +134,17 @@ a:hover{
 }
 .cart{
     margin-top: 10rem;
+}
+.num{
+    right: 3px;
+    top: -10px;
+    font-size: 25px;
+}
+.size{
+    font-size: 25px;
+}
+.trash{
+    font-size: 25px;
+    color: #00659D;
+    cursor: pointer;
 }

@@ -21,10 +21,10 @@ function renderNav(links){
     let html = "";
     let location = window.location.pathname.split('/')[window.location.pathname.split('/').length-1];
     links.forEach(link=>{
-        if(location==" "){
+        if(location==""){
             html+=`
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">${link.content}</a>
+                <a class="nav-link" href="index.html">Home</a>
             </li>`;
         }
         if(location==link.href){

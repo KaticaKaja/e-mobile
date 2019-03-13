@@ -5,7 +5,6 @@ window.onload = function(){
     onScrollChangeBgColor();
     document.getElementById("search").addEventListener("keyup",searchPhones);
 
-
 }
 // SHOW ALL PHONES
 function ajaxAllPhones(){
@@ -27,15 +26,16 @@ function renderPhones(data){
     let html = "";
     data.forEach(phone => {
     html += `<div class="col-lg-4 col-md-6 overflow-hidden mb-5">
-                <img class="w-100" src="${phone.img}" alt="${phone.name}"/>`;
+                <img class="w-100" src="${phone.img}" alt="${phone.name}"/>
+                <div class="d-flex justify-content-center mt-3 price"><p>${phone.name}</p></div>`;
             if(phone.price.sale){
                 html+=`
-                <div class="d-flex justify-content-around mt-3 price"><p>${phone.price.new}$ </p><del>${phone.price.old}$</del></div>
+                <div class="d-flex justify-content-around price"><p>${phone.price.new}$ </p><del>${phone.price.old}$</del></div>
                 <span class="ribbon">SALE</span>`;
                 
             }
             else{
-                html+=`<div class="d-flex justify-content-center mt-3 price"><p>${phone.price.old}$ </p></div>`;
+                html+=`<div class="d-flex justify-content-center price"><p>${phone.price.old}$ </p></div>`;
             }
             html+=`<div class="d-flex justify-content-center mt-3">
             <button type="button" data-phone="${phone.id}" class="btn btn-primary config">View configuration</button></div></div>`; 
@@ -64,11 +64,23 @@ function renderPhone(phone){
         </div>
         <div class="col-md-6 mt-4 d-flex flex-column justify-content-between">
             <ul class="list-group list-group-flush phoneConfigList">
-                <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-mobile-alt configItem"></span>${phone.disp}px</li>
-                <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-hdd configItem color"></span>${phone.ROM} Gb</li>
-                <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-memory configItem"></span>${phone.RAM} Gb</li>
-                <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-camera configItem color"></span>Selfie: ${phone.selfie}px ; Main-camera: ${phone.cameraR}px</li>
-                <li class="list-group-item d-flex justify-content-between align-items-center"><span class="fa fa-microchip configItem"></span><span class="w-75 text-right">${phone.cpu}</span></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="fa fa-mobile-alt configItem"></span>${phone.disp}px
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="fa fa-hdd configItem color"></span>${phone.ROM} Gb
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="fa fa-memory configItem"></span>${phone.RAM} Gb
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="fa fa-camera configItem color"></span>
+                    Selfie: ${phone.selfie}px ; Main-camera: ${phone.cameraR}px
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="fa fa-microchip configItem"></span>
+                    <span class="w-75 text-right">${phone.cpu}</span>
+                </li>
             </ul>
             <div class="d-flex justify-content-around mt-5">
             <button type="button" class="btn btn-lg w-50 btn-primary" id="back">Go back</button>
@@ -139,7 +151,7 @@ function ajaxPhone(){
     });
     
 }
-
+// show checkboxes
 function ajaxRAMROM(){
     $.ajax({
         url: "data/categories.json",

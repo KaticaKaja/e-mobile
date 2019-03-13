@@ -9,9 +9,9 @@
         },
         "img": "assets/images/pSmart.jpg",
         "imgs":[
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg"
+            "assets/images/huaweiP1.jpg",
+            "assets/images/huaweiP2.jpg",
+            "assets/images/pSmart.jpg"
         ],
             "disp": 6.21,
             "ROM": 32,
@@ -30,9 +30,9 @@
         },
         "img": "assets/images/mate20.jpg",
         "imgs":[
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg"
+            "assets/images/huaweiMate2.jpg",
+            "assets/images/huaweiMate1.jpg",
+            "assets/images/mate20.jpg"
         ],
             "disp": 7.2,
             "ROM": 64,
@@ -52,8 +52,8 @@
         "img": "assets/images/samsungA6.jpg",
         "imgs":[
             "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg"
+            "assets/images/samsungA62.png",
+            "assets/images/samsungA61.jpg"
         ],
             "disp": 5.6,
             "ROM": 32,
@@ -72,9 +72,9 @@
         },
         "img": "assets/images/iphone8.jpg",
         "imgs":[
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg",
-            "assets/images/samsungA6.jpg"
+            "assets/images/iphone61.jpg",
+            "assets/images/iphone82.jpg",
+            "assets/images/iphone8.jpg"
         ],
             "disp": 4.7,
             "ROM": 64,
@@ -82,5 +82,47 @@
             "selfie": 7,
             "cameraR": 12,
             "cpu": "Hexa-core (2x Monsoon + 4x Mistral)"
+    },
+    {
+        "id": 5,
+        "name": "Xiaomi Redmi Note 7",
+        "price": {
+            "sale" : true,
+            "new" : 199,
+            "old" : 230
+        },
+        "img": "assets/images/xiaomiredmi7.jpg",
+        "imgs":[
+            "assets/images/xioamiredmi7pink.jpeg",
+            "assets/images/xiaomi71.jpg",
+            "assets/images/xiaomiredmi7.jpg"
+        ],
+            "disp": 6.3,
+            "ROM": 16,
+            "RAM": 3,
+            "selfie": 13,
+            "cameraR": 48,
+            "cpu": "Octa-core (4x2.2 GHz Kryo 260 & 4x1.8 GHz Kryo 260)"
+    },
+    {
+        "id": 6,
+        "name": "Xiaomi Redmi Note 7",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 520
+        },
+        "img": "assets/images/meizupro7.jpg",
+        "imgs":[
+            "assets/images/meizupro72.jpg",
+            "assets/images/meizupro71.jpg",
+            "assets/images/meizupro7.jpg"
+        ],
+            "disp": 5.2,
+            "ROM": 64,
+            "RAM": 4,
+            "selfie": 13,
+            "cameraR": 48,
+            "cpu": "Octa-core (4x2.4 GHz Cortex-A53 & 4x1.6 GHz Cortex-A53)"
     }
 ]

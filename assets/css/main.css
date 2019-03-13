@@ -132,7 +132,7 @@ a:hover{
 .price{
     font-size: 20px;
 }
-.cart{
+.marginTop{
     margin-top: 10rem;
 }
 .num{
@@ -147,4 +147,17 @@ a:hover{
     font-size: 25px;
     color: #00659D;
     cursor: pointer;
+}
+
+#contact{
+    font-size: 23px;
+    font-weight: bold;
+    color: rgb(92, 146, 33);
+}
+.bgPicture{
+    background-image: url("../images/nekaSlikica.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
 </head>
-<body>
+<body class="bgPicture">
     <nav class="navbar navbar-dark navbar-expand-lg navbar-inverse bg-inverse fixed-top p-0 menuPosts" id="menu">
         <div class="container">
             <a href="#"><img src="assets/images/logo2.png" alt="logo" class="navbar-brand" id="logo"/></a>
@@ -26,10 +26,32 @@
             </div>
         </div>
     </nav>
+    <div class="container marginTop min-vh-100" id="contact">
+        
+        <form action="#" method="POST" class="w-75">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Your name..." name="fname"/>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Last name here..." name="lname"/>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" placeholder="Your e-mail..." name="email"/>
+            </div>
+            <div class="form-group">
+                <label for="comment">Your message</label>
+                <textarea class="form-control" id="comment" rows="6" placeholder="Here..." name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-50" id="send">Submit</button>
+        </form>
+
+    </div>
 
 
-
-    <footer class="w-100 bgcolor py-2 text-white position-relative">
+    <footer class="w-100 bgcolor py-2 text-white">
         <div class="container">
             <div class="configItem d-flex justify-content-end">
                 <a href="https//www.instagram.com"><span class="fab fa-instagram mr-2"></span></a>
@@ -45,6 +67,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="assets/js/nav.js"></script>
-    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>

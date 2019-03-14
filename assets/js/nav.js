@@ -19,15 +19,21 @@ function ajaxNav(){
 
 function renderNav(links){
     let html = "";
-    let location = window.location.pathname.split('/')[window.location.pathname.split('/').length-1];
+    let currentLocation = window.location.pathname.split('/')[window.location.pathname.split('/').length-1];
     links.forEach(link=>{
-        if(location==""){
+        if(currentLocation==""){
             html+=`
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">Home</a>
             </li>`;
         }
-        if(location==link.href){
+        else{
+            html+=`
+                <li class="nav-item">
+                    <a class="nav-link" href="${link.href}">${link.content}</a>
+                </li>`;
+        }
+        if(currentLocation==link.href){
             html+=`
                 <li class="nav-item active">
                     <a class="nav-link" href="${link.href}">${link.content}</a>

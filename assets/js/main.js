@@ -1,7 +1,7 @@
 window.onload = function(){
     
     ajaxAllPhones();
-    ajaxRAMROM();
+    ajaxRAMSTORAGE();
     onScrollChangeBgColor();
     document.getElementById("search").addEventListener("keyup",searchPhones);
 
@@ -68,7 +68,7 @@ function renderPhone(phone){
                     <span class="fa fa-mobile-alt configItem"></span>${phone.disp}px
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fa fa-hdd configItem color"></span>${phone.ROM} Gb
+                    <span class="fa fa-hdd configItem color"></span>${phone.storage} Gb
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <span class="fa fa-memory configItem"></span>${phone.RAM} Gb
@@ -107,14 +107,14 @@ function renderPhone(phone){
 }
 
 // RENDER CHECKBOXES
-function renderRAMROM(data){
+function renderRAMSTORAGE(data){
     let html = "";
     data.forEach(category => {
         if(category.id=="ram1"){
             html+=`<div class="text-lg-left text-md-center"><h4>RAM memory</h4>`;
         }
         else if(category.id=="storage1"){
-            html+=`<div class="text-lg-left text-md-center mt-lg-2"><h4>ROM memory</h4>`
+            html+=`<div class="text-lg-left text-md-center mt-lg-2"><h4>Storage memory</h4>`
         }
         html += `
         <div class="custom-control custom-checkbox border-top-primary my-3">
@@ -129,7 +129,7 @@ function renderRAMROM(data){
 
     document.querySelectorAll("input[type='checkbox']").forEach(box => {
         box.addEventListener("change",()=>{
-            filterRAMROM();
+            filterRAMSTORAGE();
         });
     });
 }
@@ -152,13 +152,13 @@ function ajaxPhone(){
     
 }
 // show checkboxes
-function ajaxRAMROM(){
+function ajaxRAMSTORAGE(){
     $.ajax({
         url: "data/categories.json",
         method: "GET",
         dataType: "json",
         success: function(data){
-            renderRAMROM(data);
+            renderRAMSTORAGE(data);
             
         },
         error: function(status, error){
@@ -170,7 +170,7 @@ function ajaxRAMROM(){
 
 //FUNCTIONALITY OF CHECKBOXES AND SEARCH
 
-function filterRAMROM(){
+function filterRAMSTORAGE(){
     document.getElementById("search").value="";
     const ramCheckboxes = document.querySelectorAll("input[name='ram']");
     const storageCheckboxes = document.querySelectorAll("input[name='storage']");
@@ -202,29 +202,29 @@ function filterRAMROM(){
                 if(box.checked) {
                     boxesChecked.push(box);
                   data.forEach(phone => {
-                        if((phone.RAM == box.ramValue) || (phone.ROM ==box.storageValue)){
+                        if((phone.RAM == box.ramValue) || (phone.storage ==box.storageValue)){
                             res.push(phone);
                         }
                     });
                 }
             });
             let ram = [];
-            let rom = [];
+            let storage = [];
             let res2 = [];
             boxesChecked.forEach(box=>{
                 if(box.name == 'ram'){
                     ram.push(box);
                 }
                 else if(box.name == 'storage'){
-                    rom.push(box);
+                    storage.push(box);
                 }
             });
-            if(ram.length && rom.length){
+            if(ram.length && storage.length){
                 res = [];
                 ram.forEach(ra=>{
-                    rom.forEach(ro=>{
+                    storage.forEach(ro=>{
                         data.forEach(phone=>{
-                            if(ra.ramValue==phone.RAM && ro.storageValue==phone.ROM){
+                            if(ra.ramValue==phone.RAM && ro.storageValue==phone.storage){
                                 res2.push(phone);
                             }
                         });

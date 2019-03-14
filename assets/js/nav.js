@@ -33,7 +33,7 @@ function renderNav(links){
                     <a class="nav-link" href="${link.href}">${link.content}</a>
                 </li>`;
         }
-        else{
+        else if(currentLocation == "" && link.href!="index.html"){
             html+=`
                 <li class="nav-item">
                     <a class="nav-link" href="${link.href}">${link.content}</a>

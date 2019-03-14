@@ -121,7 +121,7 @@ function renderRAMROM(data){
             <input type="checkbox" class="custom-control-input" name="${category.name}" value="${category.value}" id="${category.id}">
             <label class="custom-control-label" for="${category.id}">${category.labelContent}</label>
         </div>`;
-        if(category.id=="ram3" || category.id=="storage4"){
+        if(category.id=="ram4" || category.id=="storage4"){
             html+=`</div>`;
         }
     });

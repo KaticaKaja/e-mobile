@@ -91,10 +91,10 @@
             "new" : 199,
             "old" : 230
         },
-        "img": "assets/images/xiaomiredmi7.jpg",
+        "img": "assets/images/xioamiredmi7pink.jpeg",
         "imgs":[
             "assets/images/xioamiredmi7pink.jpeg",
-            "assets/images/xiaomi71.jpg",
+            "assets/images/xiaomiredmi71.jpg",
             "assets/images/xiaomiredmi7.jpg"
         ],
             "disp": 6.3,
@@ -106,7 +106,7 @@
     },
     {
         "id": 6,
-        "name": "Xiaomi Redmi Note 7",
+        "name": "Meizu pro 7",
         "price": {
             "sale" : false,
             "new" : 0,
@@ -122,7 +122,49 @@
             "ROM": 64,
             "RAM": 4,
             "selfie": 13,
-            "cameraR": 48,
+            "cameraR": 20,
             "cpu": "Octa-core (4x2.4 GHz Cortex-A53 & 4x1.6 GHz Cortex-A53)"
+    },
+    {
+        "id": 7,
+        "name": "Meizu 8x",
+        "price": {
+            "sale" : true,
+            "new" : 430,
+            "old" : 520
+        },
+        "img": "assets/images/meizu8x.jpg",
+        "imgs":[
+            "assets/images/meizu8x1.jpg",
+            "assets/images/meizu8x2.jpg",
+            "assets/images/meizu8x.jpg"
+        ],
+            "disp": 6.2,
+            "ROM": 64,
+            "RAM": 6,
+            "selfie": 12,
+            "cameraR": 5,
+            "cpu": "Octa-core (2x2.2 GHz 360 Gold & 6x1.7 GHz Kryo 360 Silver)"
+    },
+    {
+        "id": 8,
+        "name": "Honor 10",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 450
+        },
+        "img": "assets/images/honor10v1.jpg",
+        "imgs":[
+            "assets/images/honor10.jpg",
+            "assets/images/honor102.jpg",
+            "assets/images/honor10v1.jpg"
+        ],
+            "disp": 6.2,
+            "ROM": 64,
+            "RAM": 6,
+            "selfie": 24,
+            "cameraR": 24,
+            "cpu": "Octa-core (4x2.4 GHz Cortex-A73 & 4x1.8 GHz Cortex-A53)"
     }
 ]

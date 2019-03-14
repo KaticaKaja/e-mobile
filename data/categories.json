@@ -18,6 +18,12 @@
         "id": "ram3"
     },
     {
+        "name" : "ram",
+        "value" : 6,
+        "labelContent" : "6 Gb",
+        "id": "ram4"
+    },
+    {
         "name" : "storage",
         "value" : 8,
         "labelContent" : "8 Gb",

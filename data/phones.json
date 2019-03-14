@@ -166,5 +166,68 @@
             "selfie": 24,
             "cameraR": 24,
             "cpu": "Octa-core (4x2.4 GHz Cortex-A73 & 4x1.8 GHz Cortex-A53)"
+    },
+    {
+        "id": 9,
+        "name": "Motorola G6 play",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 190
+        },
+        "img": "assets/images/motorolag6.jpg",
+        "imgs":[
+            "assets/images/moto-g6-plus.jpg",
+            "assets/images/motorolag6.jpg",
+            "assets/images/motorolag6blue.jpg"
+        ],
+            "disp": 5.7,
+            "ROM": 32,
+            "RAM": 3,
+            "selfie": 8,
+            "cameraR": 13,
+            "cpu": "Octa-core 1.4 GHz Cortex-A53"
+    },
+    {
+        "id": 10,
+        "name": "iphone X",
+        "price": {
+            "sale" : true,
+            "new" : 980,
+            "old" : 1100
+        },
+        "img": "assets/images/iphonex1.jpg",
+        "imgs":[
+            "assets/images/iphone2.jpg",
+            "assets/images/iphonexwhite.jpg",
+            "assets/images/iphonex1.jpg"
+        ],
+            "disp": 5.8,
+            "ROM": 64,
+            "RAM": 3,
+            "selfie": 12,
+            "cameraR": 12,
+            "cpu": "Hexa-core 2.39 GHz (2x Monsoon + 4x Mistral)"
+    },
+    {
+        "id": 11,
+        "name": "Samsung Galaxy s10",
+        "price": {
+            "sale" : false,
+            "new" : 0,
+            "old" : 1100
+        },
+        "img": "assets/images/galaxys10.jpg",
+        "imgs":[
+            "assets/images/galaxys10.jpg",
+            "assets/images/samsungs10.png",
+            "assets/images/samsunggalaxys10.jpg"
+        ],
+            "disp": 6.1,
+            "ROM": 64,
+            "RAM": 6,
+            "selfie": 12,
+            "cameraR": 16,
+            "cpu": "Octa-core (2x2.73 GHz Mongoose M4 & 2x2.31 GHz Cortex-A75)"
     }
 ]

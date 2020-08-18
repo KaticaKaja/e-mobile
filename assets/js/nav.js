@@ -16,7 +16,7 @@ function ajaxNav(){
         }
     });
 }
-
+ // SHOW NAV
 function renderNav(links){
     let html = "";
     let currentLocation = window.location.pathname.split('/')[window.location.pathname.split('/').length-1];

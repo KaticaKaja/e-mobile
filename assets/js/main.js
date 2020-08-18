@@ -6,7 +6,7 @@ window.onload = function(){
     document.getElementById("search").addEventListener("keyup",searchPhones);
 
 }
-// SHOW ALL PHONES
+// SHOW ALL PHONES ---
 function ajaxAllPhones(){
     $.ajax({
         url: "data/phones.json",

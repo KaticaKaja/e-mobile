@@ -25,7 +25,7 @@
         "name": "Huawei Mate 20 X",
         "price": {
             "sale" : true,
-            "new" : 924,
+            "new" : 925,
             "old" : 999
         },
         "img": "assets/images/mate20.jpg",
